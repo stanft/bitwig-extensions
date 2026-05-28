@@ -20,7 +20,7 @@ public class TouchEncoder extends TouchControl {
         final MidiIn midiIn = midiProcessor.getMidiIn();
         encoder = surface.createRelativeHardwareKnob("ENCODER_%d".formatted(id + 1));
         encoder.setAdjustValueMatcher(midiIn.createRelativeBinOffsetCCValueMatcher(0, ccNr, 200));
-        encoder.setStepSize(0.01);
+        encoder.setStepSize(0.005);
     }
 
     public void bindParameter(final Layer layer, final Parameter parameter, final StringValue labelValue) {

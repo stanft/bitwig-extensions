@@ -9,74 +9,74 @@ import com.bitwig.extension.controller.api.ControllerHost;
 
 public class KeylabMk3ControllerExtensionDefinition extends ControllerExtensionDefinition {
     private static final UUID DRIVER_ID = UUID.fromString("1b9962d9-5c32-4d5a-a42e-594dbe0f64cf");
-    
+
     // 2- KeyLab 61 mk3 MIDI
     // 2- KeyLab 61 mk3 DAW
     private static final String MIDI_NAME_FORMAT_WINDOWS = "KeyLab %d mk3 MIDI";
     private static final String DAW_NAME_FORMAT_WINDOWS = "KeyLab %d mk3 DAW";
-    
+
     private static final String MIDI_NAME_FORMAT_MAC = "KeyLab %d mk3 MIDI";
     private static final String DAW_NAME_FORMAT_MAC = "KeyLab %d mk3 DAW";
-    
+
     private static final String MIDI_NAME_FORMAT_LINUX = "KeyLab %d mk3 KeyLab %d mk3 MID";
     private static final String DAW_NAME_FORMAT_LINUX = "KeyLab %d mk3 KeyLab %d mk3 DAW";
-    
-    
+
+
     private static final int[] KEY_VARS = {49, 61, 88};
-    
+
     public KeylabMk3ControllerExtensionDefinition() {
     }
-    
+
     @Override
     public String getName() {
-        return "KeyLab Mk3";
+        return "KeyLab Mk3 (Custom)";
     }
-    
+
     @Override
     public String getAuthor() {
         return "Bitwig";
     }
-    
+
     @Override
     public String getVersion() {
         return "1.01";
     }
-    
+
     @Override
     public UUID getId() {
         return DRIVER_ID;
     }
-    
+
     @Override
     public String getHardwareVendor() {
         return "Arturia";
     }
-    
+
     @Override
     public String getHardwareModel() {
         return "KeyLab Mk3";
     }
-    
+
     @Override
     public int getRequiredAPIVersion() {
         return 18;
     }
-    
+
     @Override
     public int getNumMidiInPorts() {
         return 2;
     }
-    
+
     @Override
     public int getNumMidiOutPorts() {
         return 2;
     }
-    
+
     @Override
     public String getHelpFilePath() {
         return "Controllers/Arturia/Arturia KeyLab mk3.pdf";
     }
-    
+
     @Override
     public void listAutoDetectionMidiPortNames(final AutoDetectionMidiPortNamesList list,
         final PlatformType platformType) {
@@ -109,8 +109,8 @@ public class KeylabMk3ControllerExtensionDefinition extends ControllerExtensionD
             }
         }
     }
-    
-    
+
+
     private void addPorts(final AutoDetectionMidiPortNamesList list, final String format, final int numberOfKeys,
         final int appendWindowsCount) {
         final String portName = String.format(format, numberOfKeys);
@@ -120,8 +120,8 @@ public class KeylabMk3ControllerExtensionDefinition extends ControllerExtensionD
             list.add(new String[] {portAppended}, new String[] {portAppended});
         }
     }
-    
-    
+
+
     @Override
     public KeylabMk3ControllerExtension createInstance(final ControllerHost host) {
         return new KeylabMk3ControllerExtension(this, host);
