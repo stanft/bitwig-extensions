@@ -8,7 +8,7 @@ import com.bitwig.extension.controller.ControllerExtensionDefinition;
 import com.bitwig.extension.controller.api.ControllerHost;
 
 public class KeylabMk3ControllerExtensionDefinition extends ControllerExtensionDefinition {
-    private static final UUID DRIVER_ID = UUID.fromString("1b9962d9-5c32-4d5a-a42e-594dbe0f64cf");
+    private static final UUID DRIVER_ID = UUID.fromString("d3f9c2a1-7b84-4e6d-9f10-2a5c8b7e1d43");
 
     // 2- KeyLab 61 mk3 MIDI
     // 2- KeyLab 61 mk3 DAW
@@ -29,17 +29,17 @@ public class KeylabMk3ControllerExtensionDefinition extends ControllerExtensionD
 
     @Override
     public String getName() {
-        return "KeyLab Mk3 (Custom)";
+        return "KeyLab Mk3";
     }
 
     @Override
     public String getAuthor() {
-        return "Bitwig";
+        return "Stephan Anft";
     }
 
     @Override
     public String getVersion() {
-        return "1.01";
+        return "1.00";
     }
 
     @Override
